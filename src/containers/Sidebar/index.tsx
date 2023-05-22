@@ -4,7 +4,11 @@ import Paragraph from '../../components/Paragraph';
 
 import { Description, ButtonTheme, SidebarContainer } from './styles';
 
-const Sidebar = () => (
+type Props = {
+  changeTheme: () => void;
+};
+
+const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar />
@@ -15,7 +19,7 @@ const Sidebar = () => (
       <Description tipo="principal" fontSize={12}>
         Frontend Developer
       </Description>
-      <ButtonTheme>Trocar tema</ButtonTheme>
+      <ButtonTheme onClick={props.changeTheme}>Trocar tema</ButtonTheme>
     </SidebarContainer>
   </aside>
 );
